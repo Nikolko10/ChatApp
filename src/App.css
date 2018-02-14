@@ -1,0 +1,236 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	height: 1px;
+	min-height: 100%;
+}
+
+body {
+	height: 100%;
+	font-family: OpenSans-Light;
+	background-color: #f9f9f9;
+}
+
+button,
+input,
+textarea {
+	outline: none;
+}
+
+textarea {
+	resize: none;
+}
+
+@font-face {
+  font-family: 'OpenSans-Light';
+  src: url('fonts/OpenSans/OpenSans-Light/OpenSans-Light.eot');
+  src: url('fonts/OpenSans/OpenSans-Light/OpenSans-Light.woff2') format('woff2'),
+       url('fonts/OpenSans/OpenSans-Light/OpenSans-Light.ttf') format('truetype'),
+       url('fonts/OpenSans/OpenSans-Light/OpenSans-Light.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans-Semibold';
+  src: url('fonts/OpenSans/OpenSans-Semibold/OpenSans-Semibold.eot');
+  src: url('fonts/OpenSans/OpenSans-Semibold/OpenSans-Semibold.woff2') format('woff2'),
+       url('fonts/OpenSans/OpenSans-Semibold/OpenSans-Semibold.ttf') format('truetype'),
+       url('fonts/OpenSans/OpenSans-Semibold/OpenSans-Semibold.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans-Bold';
+  src: url('fonts/OpenSans/OpenSans-Bold/OpenSans-Bold.eot');
+  src: url('fonts/OpenSans/OpenSans-Bold/OpenSans-Bold.woff2') format('woff2'),
+       url('fonts/OpenSans/OpenSans-Bold/OpenSans-Bold.ttf') format('truetype'),
+       url('fonts/OpenSans/OpenSans-Bold/OpenSans-Bold.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#root {
+	width: 1024px;
+	margin: 0 auto;
+	min-height: 100%;
+	display: flex;
+}
+
+.App {
+	display: flex;
+	width: 100%;
+}
+
+.app_name {
+	background-color: #2b2f3e;
+	width: 25%;
+	padding: 30px;
+	color: white;
+}
+
+.app_name h2 {
+	text-transform: uppercase;
+}
+
+.app_name span {
+	font-size: 14px;
+}
+
+.main {
+	background-color: #f9f9f9;
+	display: flex;
+	align-items: flex-start;
+	width: 100%;
+	padding: 30px;
+}
+
+.main div.rooms,
+.main div.msg {
+	padding: 20px 28px;
+	box-shadow: 0px 0px 3px rgba(0, 0, 0, .3);
+	background-color: #fff;
+}
+
+.rooms {
+	width: 55%;
+	margin-right: 15px;
+}
+
+.empty {
+	margin: 10px 0;
+	text-align: center;
+}
+
+.rooms .add_room {
+	display: flex;
+	margin-top: 25px;
+	width: 100%;
+}
+
+.rooms .add_room input,
+.rooms .add_room button {
+	border-radius: 3px;
+	padding: 12px 10px;
+	border: none;
+}
+
+.rooms .add_room input {
+	width: 65%;
+	margin-right: 10px;
+	border: 2px solid #e5e5e5;
+}
+
+.rooms .add_room button {
+	width: 35%;
+	background-color: #27ccc0;
+	color: white;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+.rooms .room {
+	padding: 10px 0;
+	display: flex;
+	border-bottom: 1px solid #f2f2f2;
+	position: relative;
+	font-size: 14px;
+}
+
+.rooms .room.active:before {
+	position: absolute;
+	content: '';
+	display: block;
+	height: 100%;
+	width: 4px;
+	background-color: #ff2f5a;
+	left: -30px;
+	top: 0;
+	bottom: 0;
+}
+
+.rooms .room .name_room {
+	cursor: pointer;
+}
+
+.rooms .room button {
+	border-radius: 3px;
+	border: 2px solid #ff98ac;
+	color: #ff98ac;
+	background-color: inherit;
+	cursor: pointer;
+	padding: 10px 26px;
+	font-size: 14px;
+}
+
+.rooms .room .info_room {
+	display: flex;
+	align-items: center;
+	flex-grow: 1;
+}
+
+.rooms .room .info_room .amount_msg {
+	margin-left: 10px;
+	margin-right: 10px;
+	font-family: OpenSans-Semibold;
+	padding: 3px 7px;
+	background-color: #27ccc0;
+	color: white;
+	border-radius: 12px;
+	font-size: 12px;
+}
+
+.msg {
+	width: 45%;
+}
+
+.wrapper_msg {
+	margin-top: 25px;
+	max-height: 345px;
+	overflow-y: auto;
+}
+
+.block_msg {
+	display: flex;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #f2f2f2;
+	font-size: 12px;
+}
+
+.block_msg:last-child {
+	border: none;
+}
+
+.block_msg .img_user {
+	min-width: 50px;
+	height: 50px;
+	margin-right: 5px;
+	background-color: #ff8a00;
+}
+
+.block_msg:nth-child(even) > div.img_user {
+	background-color: #47568c;
+}
+
+.add_msg {
+	display: flex;
+}
+
+.add_msg .default_img {
+	display: flex;
+	min-width: 50px;
+	height: 50px;
+	margin-right: 5px;
+	background-color: #e6e6e6;
+}
+
+.add_msg textarea {
+	width: 100%;
+	padding: 5px;
+	border: 2px solid #e6e6e6;
+}
